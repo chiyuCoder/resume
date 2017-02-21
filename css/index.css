@@ -110,7 +110,7 @@ position: relative;width:100%;height: 100%;
     #anchor ul:after{content: "";height:0;clear:both;visibility: hidden;}
     #anchor ul li{float: left;margin:0 10px;width:120px;}
 }
-@media screen and (max-width:530px) {
+@media screen and (max-width:655px) {
     .content .codeList{width:100%;}
     .content .smallList:after{content: "";height:0;clear:both;visibility: hidden;}
     .content .left,.content .right{
