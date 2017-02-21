@@ -59,6 +59,7 @@ position: relative;width:100%;height: 100%;
 .content .horizList dt{
 	font-size: 18px;font-weight: bold;
 }
+.content .horizList dd{text-indent: 2em;}
 /*myInfo showIt--*/
 @keyframes toRight {
     from {transform: translate(-100%,0);}
@@ -102,6 +103,17 @@ position: relative;width:100%;height: 100%;
 }
 /*--myCodes*/
 /*@media*/
-@media screen and (max-width:500px) {
+@media screen and (max-width:745px) {
+    #anchor {
+        top:10px;left:20px;
+    }
+    #anchor ul:after{content: "";height:0;clear:both;visibility: hidden;}
+    #anchor ul li{float: left;margin:0 10px;width:120px;}
+}
+@media screen and (max-width:530px) {
     .content .codeList{width:100%;}
+    .content .smallList:after{content: "";height:0;clear:both;visibility: hidden;}
+    .content .left,.content .right{
+	   float:none;width:100%;
+    }
 }
