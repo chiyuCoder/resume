@@ -9,6 +9,8 @@ function getClass(myclass) {
     return myclasses;
 }
 var seg = getClass("segment"),
+    ancList = document.getElementById("anchor"),
+    ancs = ancList.getElementsByTagName("ul")[0].getElementsByTagName("li"),
     cl = false;
 //初始状态
 function init() {
@@ -21,17 +23,18 @@ init();
 function setShowPage(anum) {
     for (var s = 0; s < seg.length; s ++) {
         seg[s].setAttribute("class","segment");
+        ancs[s].style.backgroundColor = "lightblue";
     }
     seg[anum].setAttribute("class","segment showIt");
     var clrs = ["cyan","lightblue","orange","wheat","#98AFC7","#eee8cd"],
-        thisColor = clrs[Math.floor(Math.random() * clrs.length)];
+        randomNum = Math.floor(Math.random() * clrs.length),
+        thisColor = clrs[randomNum];
     
     seg[anum].style.backgroundColor = thisColor;
+    ancs[anum].style.backgroundColor = thisColor;
 }
 //点击改变
 (function getAnc() {
-    var ancList = document.getElementById("anchor"),
-        ancs = ancList.getElementsByTagName("ul")[0].getElementsByTagName("li");
     for (var i = 0; i < ancs.length; i ++) {
         ancs[i].onclick = function () {
             cl = true;
