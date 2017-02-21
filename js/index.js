@@ -22,11 +22,12 @@ init();
 //改变页码
 function setShowPage(anum) {
     for (var s = 0; s < seg.length; s ++) {
-        seg[s].setAttribute("class","segment");
+        //seg[s].setAttribute("class","segment");
+        seg[s].className = "segment";
         ancs[s].style.backgroundColor = "lightblue";
     }
     seg[anum].setAttribute("class","segment showIt");
-    var clrs = ["cyan","lightblue","orange","wheat","#98AFC7","#eee8cd"],
+    var clrs = ["rgb(27, 188, 155)","rgb(24, 137, 197)","rgb(123, 170, 190)","rgb(145, 180, 147)","cyan","lightblue","orange","wheat","#98AFC7","#eee8cd"],
         randomNum = Math.floor(Math.random() * clrs.length),
         thisColor = clrs[randomNum];
     
@@ -47,6 +48,7 @@ function setShowPage(anum) {
 //滚轮改变
 function giveNum(gnum) {
     document.onmousewheel = function (event) {
+        event = event || window.event;
         if (event.wheelDelta < 0) {
             if (gnum < seg.length - 1) {
                 gnum ++;
