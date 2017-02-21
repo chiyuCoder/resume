@@ -1,0 +1,107 @@
+/*预先设定--*/
+*{margin:0;padding: 0;}
+a{color: darkred;text-decoration: none;}
+a:hover{font-size: 1.2em;font-weight: bold;letter-spacing: 2px; color:darkviolet;text-decoration: underline;}
+ul{list-style: none;}
+html,body{width: 100%;height: 100%;overflow: hidden;font-family: 'Microsoft Yahei';}
+#myFS {
+position: relative;width:100%;height: 100%;
+}
+.segment {
+	width: 100%;height: 100%;display: table;table-layout: fixed;overflow: hidden;position: absolute;top:100%;left:0;
+}
+.segment.showIt {
+	top:0;left:0;
+}
+.horizList dt,.horizList dd{
+	float: left;
+}
+.horizList:after {
+	content: "";display: block;height: 0;visibility: hidden;clear:both;
+}
+@keyframes sh{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.showIt .contain h2{
+    animation: 3s sh ease;
+}
+/*--预先设定*/
+/*my title --*/
+.contain{text-align: center;display: table-cell;
+    vertical-align: middle;
+}
+/*-- my title*/
+/*anchor--*/
+#anchor{position: fixed;top:120px;right:20px;}
+#anchor ul li{
+    padding: 5px 10px;border:1px solid #3c3;text-align: center;margin:10px 0;cursor: pointer;font-size: 1em;background: lightblue;color:crimson;font-family: '楷体';
+}
+/*--anchor*/
+.segment .contain h2{
+	font-size: 4em;padding: 20px 0;
+}
+.content {
+	width:80%;margin:0 auto;font-size: 0.8em;
+}
+.content:after{content: "";display: block;height: 0;visibility: hidden;clear:both;}
+/*myInfo--*/
+.content .left{
+	float: left;width:50%;
+}
+.content .left ul{
+    width:235px;margin:0 auto;
+}
+.content .right{
+	float: left;text-align: left;width:50%;
+}
+.content .right ol li{margin:5px 0;}
+.content .horizList dt{
+	font-size: 1.1em;font-weight: bold;
+}
+/*myInfo showIt--*/
+@keyframes toRight {
+    from {transform: translate(-100%,0);}
+    to {transform: translate(0,0);}
+}
+@keyframes toLeft {
+    from {transform: translate(200%,0);}
+    to {transform: translate(0,0)}
+}
+.segment.showIt .left{
+	animation: 1s toRight ease;
+}
+.segment.showIt .right{
+	animation: 1s toLeft ease;
+}
+/*--myInfo*/
+/*myCodes--*/
+.content .codeList{text-align: left;width:500px;margin:20px auto}
+.content .codeList li{margin:10px 0;}
+.content .codeList li dl dt{font-size: 1.2em;font-weight: bold;line-height: 2em;}
+.content .codeList li dl dd .description {
+	margin:5px 0;text-indent: 2em;
+}
+.content .codeList li dl dd .address{
+	font-family: '楷体';margin-right: 20px;
+}
+/*myCodes showIt--*/
+@keyframes rotateSX{
+    from{transform: rotateX(180deg);}
+    to {transform: rotateX(0deg);}
+}
+@keyframes rotateSZ{
+    from {transform:rotateZ(180deg);}
+    to {transform: rotateZ(0deg);}
+}
+.showIt .codeList li dt{
+	animation: 1s rotateSX ease;
+}
+.showIt .codeList li dd{
+    animation: 1s rotateSZ ease;
+}
+/*--myCodes*/
+/*@media*/
+@media screen and (max-width:500px) {
+    .content .codeList{width:100%;}
+}
