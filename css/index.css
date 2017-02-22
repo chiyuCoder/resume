@@ -4,14 +4,15 @@ a{color: darkred;text-decoration: none;}
 a:hover{font-size: 1.2em;font-weight: bold;letter-spacing: 2px; color:darkviolet;text-decoration: underline;}
 ul{list-style: none;}
 html,body{width: 100%;height: 100%;overflow: hidden;font-family: 'Microsoft Yahei';}
+
 #myFS {
 position: relative;width:100%;height: 100%;
 }
 .segment {
-	width: 100%;height: 100%;display: table;table-layout: fixed;overflow: hidden;position: absolute;top:100%;left:0;
+	width: 100%;height: 100%;display: table;table-layout: fixed;overflow: hidden;position: absolute;top:100%;left:0;z-index: 1; 
 }
 .segment.showIt {
-	top:0;left:0;
+	top:0;left:0;z-index: 10; 
 }
 .horizList dt,.horizList dd{
 	float: left;
@@ -33,7 +34,7 @@ position: relative;width:100%;height: 100%;
 }
 /*-- my title*/
 /*anchor--*/
-#anchor{position: fixed;top:120px;right:20px;}
+#anchor{position: fixed;top:120px;right:20px;z-index: 20;}
 #anchor ul li{
     padding: 5px 10px;border:1px solid #3c3;text-align: center;margin:10px 0;cursor: pointer;font-size: 22px;background: lightblue;color:crimson;font-family: '楷体';
 }
